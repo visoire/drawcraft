@@ -1,0 +1,23 @@
+DrawCraft
+Copyright (c) 2026 DrawCraft contributors
+
+DrawCraft is dual-licensed under the MIT License (LICENSE-MIT) or the Apache License,
+Version 2.0 (LICENSE-APACHE), at your option.
+
+This product includes software developed by the PaperCraft contributors
+(https://github.com/alyxhard/papercraft, revision 02e3453f2e33f4059384a71d782b4726270ed42d),
+licensed under "MIT OR Apache-2.0": Copyright (c) 2026 PaperCraft contributors.
+The geometry, colour, raster, tablet, document, operations, paint, compose, format,
+sync-protocol, sync and engine crates, the headless CLI, the egui user interface
+(crates/ui), the WebAssembly host (apps/drawcraft-web) and the desktop shell
+(apps/drawcraft) are derived from that work.
+
+The Lucide icons under crates/ui/assets/icons/lucide are licensed under the ISC License
+(Lucide Contributors; Feather portions under the MIT License). See the LICENSE file in
+that directory.
+
+The Roboto font files under crates/compose/assets/fonts are licensed under the Apache
+License, Version 2.0 (see crates/compose/assets/fonts/LICENSE).
+
+Third-party Rust dependencies are used under their own licenses; see Cargo.lock and
+deny.toml. A complete per-file ledger is kept in ATTRIBUTION.md.

@@ -1,0 +1,13 @@
+[package]
+name = "drawcraft-color"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Straight-RGBA color types, Porter-Duff / Multiply compositing, and curated ink & highlighter palettes"
+
+[dependencies]
+drawcraft-geom.workspace = true
+serde.workspace = true
+
+[lints]
+workspace = true

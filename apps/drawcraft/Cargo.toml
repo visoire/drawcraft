@@ -1,0 +1,19 @@
+[package]
+name = "drawcraft"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "DrawCraft desktop shell: the same Pure-Rust UI as the web app, for local debugging and desktop use."
+license.workspace = true
+publish = false
+
+[dependencies]
+drawcraft-tablet.workspace = true
+drawcraft-engine.workspace = true
+drawcraft-ui.workspace = true
+eframe.workspace = true
+egui.workspace = true
+log.workspace = true
+
+[lints]
+workspace = true

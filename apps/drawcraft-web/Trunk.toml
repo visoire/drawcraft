@@ -1,0 +1,16 @@
+[build]
+target = "index.html"
+dist = "dist"
+# Relative asset URLs so the bundle works under a sub-path such as GitHub Pages.
+public_url = "./"
+# Stable file names so the service worker and the shell always agree on what to cache.
+filehash = false
+
+[clean]
+cargo = false
+
+[serve]
+# `cargo xtask web` serves on localhost; `cargo xtask dev` passes --address 0.0.0.0 for iPad testing on the LAN.
+address = "127.0.0.1"
+port = 8080
+open = false

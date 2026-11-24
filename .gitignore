@@ -1,0 +1,22 @@
+# Build output
+/target
+**/target/
+**/dist/
+# Local-only files
+dev-cert/
+*.corrupt
+*.log
+*.tmp
+*.bak
+*.orig
+*.swp
+# Editors and OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.code-workspace
+# Local scratch
+/demo*.png
+/scratch/

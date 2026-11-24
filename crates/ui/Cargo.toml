@@ -1,0 +1,33 @@
+[package]
+name = "drawcraft-ui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Thin egui/eframe shell for DrawCraft handwriting and drawing canvas"
+
+[dependencies]
+drawcraft-geom.workspace = true
+drawcraft-color.workspace = true
+drawcraft-raster.workspace = true
+drawcraft-doc.workspace = true
+drawcraft-paint.workspace = true
+drawcraft-engine.workspace = true
+drawcraft-format.workspace = true
+drawcraft-sync-protocol.workspace = true
+drawcraft-sync.workspace = true
+egui.workspace = true
+egui_extras.workspace = true
+eframe.workspace = true
+image.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+winit.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+zip = { version = "9.8.2", default-features = false, features = ["deflate"] }

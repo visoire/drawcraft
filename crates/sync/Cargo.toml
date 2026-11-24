@@ -1,0 +1,23 @@
+[package]
+name = "drawcraft-sync"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+description = "Offline-first client synchronization, local manifest persistence, and HTTP API client for DrawCraft"
+
+[dependencies]
+drawcraft-doc.workspace = true
+drawcraft-format.workspace = true
+drawcraft-sync-protocol.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+log.workspace = true
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+ureq.workspace = true
+
+[lints]
+workspace = true

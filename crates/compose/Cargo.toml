@@ -1,0 +1,20 @@
+[package]
+name = "drawcraft-compose"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Deterministic CPU page compositor rendering paper templates, ink strokes, and placed text"
+
+[dependencies]
+drawcraft-geom.workspace = true
+drawcraft-color.workspace = true
+drawcraft-raster.workspace = true
+drawcraft-doc.workspace = true
+drawcraft-paint.workspace = true
+flate2.workspace = true
+fontdue = "0.9.3"
+hayro.workspace = true
+image.workspace = true
+
+[lints]
+workspace = true

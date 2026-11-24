@@ -1,0 +1,21 @@
+[package]
+name = "drawcraft-tablet"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Cross-platform pen tablet pressure, tilt, rotation, barrel button, and eraser-end input"
+
+# Only `src/windows.rs` allows localized unsafe Win32 pointer hooks with SAFETY comments;
+# all pure decoding (`win_ink`, `appkit`, `xi`) and all other workspace crates stay safe.
+[lints.rust]
+unsafe_code = "deny"
+
+[lints.clippy]
+cognitive_complexity = "deny"
+too_many_arguments = "deny"
+wildcard_imports = "deny"
+dbg_macro = "warn"
+todo = "warn"
+
+[dependencies]
+log.workspace = true

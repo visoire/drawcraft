@@ -1,0 +1,15 @@
+[package]
+name = "drawcraft-paint"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Handwriting and drawing engine: 1-Euro, Pulled-String, EMA, Gaussian & StreamLine stabilizers, Catmull-Rom splines, pen physics, ribbon meshing, CPU rasterizer, and erasers"
+
+[dependencies]
+drawcraft-geom.workspace = true
+drawcraft-color.workspace = true
+drawcraft-raster.workspace = true
+drawcraft-doc.workspace = true
+
+[lints]
+workspace = true

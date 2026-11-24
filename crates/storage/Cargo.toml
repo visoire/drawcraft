@@ -1,0 +1,11 @@
+[package]
+name = "drawcraft-storage"
+description = "Portable tiered storage model: hot LRU mirror, byte-budget caps and revision-bound two-step flush tracking (RFC-0023 aligned)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true

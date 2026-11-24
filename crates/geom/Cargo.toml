@@ -1,0 +1,12 @@
+[package]
+name = "drawcraft-geom"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "2D geometry primitives, affine transforms, centripetal Catmull-Rom evaluation, and RDP simplification"
+
+[dependencies]
+serde.workspace = true
+
+[lints]
+workspace = true

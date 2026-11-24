@@ -1,0 +1,101 @@
+[workspace]
+resolver = "3"
+members = [
+    # L0 Foundation
+    "crates/geom",
+    "crates/color",
+    "crates/raster",
+    "crates/tablet",
+    # L1 Document
+    "crates/doc",
+    # L2 Operations, Paint & Sync Protocol
+    "crates/ops",
+    "crates/paint",
+    "crates/sync-protocol",
+    # L3 Format & Compositor
+    "crates/format",
+    "crates/compose",
+    # L4 Storage & Sync runtime
+    "crates/storage",
+    "crates/sync",
+    # L5 Engine
+    "crates/engine",
+    # L6 Web UI shell (Web-first fast workspace; desktop/CLI/FFI excluded from default builds)
+    "crates/ui",
+    "apps/drawcraft-web",
+    # Native shells
+    "apps/drawcraft",
+    "apps/drawcraft-cli",
+    # Tooling
+    "xtask",
+]
+exclude = ["crates/ffi"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/visoire/drawcraft"
+homepage = "https://github.com/visoire/drawcraft"
+publish = false
+
+# Internal crates (single source of truth for paths; layer rules are enforced by `cargo xtask layers`).
+[workspace.dependencies]
+drawcraft-geom = { path = "crates/geom" }
+drawcraft-color = { path = "crates/color" }
+drawcraft-raster = { path = "crates/raster" }
+drawcraft-tablet = { path = "crates/tablet" }
+drawcraft-doc = { path = "crates/doc" }
+drawcraft-ops = { path = "crates/ops" }
+drawcraft-paint = { path = "crates/paint" }
+drawcraft-sync-protocol = { path = "crates/sync-protocol" }
+drawcraft-format = { path = "crates/format" }
+drawcraft-compose = { path = "crates/compose" }
+drawcraft-storage = { path = "crates/storage" }
+drawcraft-sync = { path = "crates/sync" }
+drawcraft-engine = { path = "crates/engine" }
+drawcraft-ui = { path = "crates/ui" }
+drawcraft-ffi = { path = "crates/ffi" }
+
+# Third-party (MIT / Apache-2.0 / ISC family only — see SPDX allowlist in AGENTS.md §3).
+# Versions follow the upstream `papercraft` workspace.
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+thiserror = "2"
+clap = { version = "4", features = ["derive", "env"] }
+log = "0.4"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock", "wasmbind"] }
+sha2 = "0.11"
+uuid = { version = "1", features = ["v4", "js"] }
+ureq = { version = "3", default-features = false, features = ["rustls", "platform-verifier", "json", "gzip"] }
+flate2 = { version = "1.1", default-features = false, features = ["rust_backend"] }
+eframe = { version = "0.37", default-features = false, features = ["default_fonts", "wgpu", "x11", "wayland"] }
+egui = { version = "0.37", default-features = false, features = ["default_fonts"] }
+egui_extras = { version = "0.37", default-features = false, features = ["svg"] }
+winit = { version = "0.30", default-features = false, features = ["wayland-dlopen", "wayland-csd-adwaita"] }
+hayro = "0.9"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "bmp", "ico", "webp", "gif", "tiff", "tga", "pnm", "qoi"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+cognitive_complexity = "deny"
+too_many_arguments = "deny"
+wildcard_imports = "deny"
+dbg_macro = "warn"
+todo = "warn"
+
+[profile.dev.package."*"]
+opt-level = 2
+debug = false
+
+[profile.dev]
+opt-level = 1
+debug = "line-tables-only"
+
+[profile.release]
+opt-level = "s"
+lto = false
+codegen-units = 16

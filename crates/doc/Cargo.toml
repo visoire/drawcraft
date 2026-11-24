@@ -1,0 +1,17 @@
+[package]
+name = "drawcraft-doc"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Pure-data document model for DrawCraft ink strokes, pens, stabilizers, pressure curves, and paper templates"
+
+[dependencies]
+drawcraft-geom.workspace = true
+drawcraft-color.workspace = true
+serde.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

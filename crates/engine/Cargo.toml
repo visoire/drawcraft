@@ -1,0 +1,28 @@
+[package]
+name = "drawcraft-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Headless session state and JSON command registry for DrawCraft"
+
+[dependencies]
+drawcraft-geom.workspace = true
+drawcraft-color.workspace = true
+drawcraft-raster.workspace = true
+drawcraft-doc.workspace = true
+drawcraft-ops.workspace = true
+drawcraft-paint.workspace = true
+drawcraft-compose.workspace = true
+drawcraft-format.workspace = true
+drawcraft-sync-protocol.workspace = true
+drawcraft-sync.workspace = true
+drawcraft-storage.workspace = true
+image.workspace = true
+uuid.workspace = true
+log.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
